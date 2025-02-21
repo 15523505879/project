@@ -1,0 +1,55 @@
+{
+  "title": "订单",
+  "description": "支付订单记录",
+  "bsonType": "object",
+  "required": ["_id", "contestantId", "voterId", "amount", "status", "createTime"],
+  "properties": {
+    "_id": {
+      "bsonType": "string",
+      "description": "订单号，格式为 ORDER_时间戳_随机字符串"
+    },
+    "contestantId": {
+      "bsonType": "string",
+      "description": "参赛者ID"
+    },
+    "voterId": {
+      "bsonType": "string",
+      "description": "投票人openid"
+    },
+    "amount": {
+      "bsonType": "int",
+      "minimum": 1,
+      "description": "支付金额，单位为分"
+    },
+    "status": {
+      "bsonType": "string",
+      "enum": ["PENDING", "SUCCESS", "FAIL"],
+      "description": "订单状态：PENDING-待支付，SUCCESS-已支付，FAIL-失败"
+    },
+    "createTime": {
+      "bsonType": "date",
+      "description": "订单创建时间"
+    },
+    "payTime": {
+      "bsonType": "date",
+      "description": "支付完成时间",
+      "optional": true
+    }
+  },
+  "indexes": [
+    {
+      "key": {
+        "voterId": 1,
+        "createTime": -1
+      },
+      "name": "voter_time_idx"
+    },
+    {
+      "key": {
+        "contestantId": 1,
+        "status": 1
+      },
+      "name": "contestant_status_idx"
+    }
+  ]
+} 

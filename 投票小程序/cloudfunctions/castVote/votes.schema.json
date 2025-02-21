@@ -1,0 +1,54 @@
+{
+  "title": "投票记录",
+  "description": "用户投票记录",
+  "bsonType": "object",
+  "required": ["contestantId", "voterId", "type", "createTime"],
+  "properties": {
+    "_id": {
+      "bsonType": "objectId",
+      "description": "记录ID，自动生成"
+    },
+    "contestantId": {
+      "bsonType": "string",
+      "description": "参赛者ID"
+    },
+    "voterId": {
+      "bsonType": "string",
+      "description": "投票人openid"
+    },
+    "type": {
+      "bsonType": "string",
+      "enum": ["like", "flower"],
+      "description": "投票类型：like-点赞，flower-送花"
+    },
+    "createTime": {
+      "bsonType": "date",
+      "description": "投票时间"
+    }
+  },
+  "indexes": [
+    {
+      "key": {
+        "voterId": 1,
+        "contestantId": 1,
+        "type": 1,
+        "createTime": -1
+      },
+      "name": "voter_contestant_type_time_idx",
+      "unique": true,
+      "partialFilterExpression": {
+        "createTime": {
+          "$gte": "$$NOW - 24h"
+        }
+      }
+    },
+    {
+      "key": {
+        "contestantId": 1,
+        "type": 1,
+        "createTime": -1
+      },
+      "name": "contestant_type_time_idx"
+    }
+  ]
+} 

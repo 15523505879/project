@@ -1,0 +1,40 @@
+.navigation-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  
+  .nav-main {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 24rpx;
+    background: transparent;
+    color: #fff;
+    
+    .nav-back {
+      padding: 16rpx;
+      margin-right: 16rpx;
+      
+      .iconfont {
+        font-size: 36rpx;
+      }
+    }
+    
+    .nav-title {
+      flex: 1;
+      font-size: 34rpx;
+      font-weight: 600;
+      text-align: center;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}
+
+.capsule-placeholder {
+  width: 100%;
+  background: transparent;
+}

@@ -1,0 +1,26 @@
+<view class="tab-bar">
+  <view class="tab-item {{selected === 0 ? 'active' : ''}}" bindtap="switchTab" data-index="0">
+    <view class="weui-tabbar__icon">
+      <mp-icon icon="home" color="{{selected === 0 ? '#4a6feb' : '#999999'}}"></mp-icon>
+    </view>
+    <view class="tab-item-text">首页</view>
+  </view>
+  <view class="tab-item {{selected === 1 ? 'active' : ''}}" bindtap="switchTab" data-index="1">
+    <view class="weui-tabbar__icon">
+      <mp-icon icon="add" color="{{selected === 1 ? '#4a6feb' : '#999999'}}"></mp-icon>
+    </view>
+    <view class="tab-item-text">报名</view>
+  </view>
+  <view class="tab-item {{selected === 2 ? 'active' : ''}}" bindtap="switchTab" data-index="2">
+    <view class="weui-tabbar__icon">
+      <mp-icon icon="star" color="{{selected === 2 ? '#4a6feb' : '#999999'}}"></mp-icon>
+    </view>
+    <view class="tab-item-text">排行</view>
+  </view>
+  <view class="tab-item {{selected === 3 ? 'active' : ''}}" bindtap="switchTab" data-index="3">
+    <view class="weui-tabbar__icon">
+      <mp-icon icon="info" color="{{selected === 3 ? '#4a6feb' : '#999999'}}"></mp-icon>
+    </view>
+    <view class="tab-item-text">详情</view>
+  </view>
+</view> 

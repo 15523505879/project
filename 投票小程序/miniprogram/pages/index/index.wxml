@@ -1,0 +1,145 @@
+<!--index.wxml-->
+<page-meta>
+  <navigation-bar title="移动互联网开发大赛" back="{{false}}" color="white" background="transparent"></navigation-bar>
+</page-meta>
+
+<view class="page-container">
+  <!-- 头部banner -->
+  <view class="header-section">
+    <view class="banner">
+      <image src="/images/banner/main-banner.png" mode="aspectFill"/>
+    </view>
+  </view>
+
+  <!-- 统计数据 -->
+  <view class="stats-card">
+    <view class="stat-item">
+      <text class="num">{{statistics.signupCount || 2140}}</text>
+      <text class="label">已报名</text>
+    </view>
+    <view class="stat-divider"></view>
+    <view class="stat-item">
+      <text class="num">{{statistics.voteCount || 916365}}</text>
+      <text class="label">已投票</text>
+    </view>
+    <view class="stat-divider"></view>
+    <view class="stat-item">
+      <text class="num">{{statistics.viewCount || '117.4万'}}</text>
+      <text class="label">浏览量</text>
+    </view>
+  </view>
+
+  <!-- 倒计时 -->
+  <view class="countdown-card">
+    <text class="countdown-title">距活动结束：</text>
+    <view class="countdown-time">
+      <view class="time-item">
+        <text class="time-num">{{countdown.days || '00'}}</text>
+        <text class="time-label">天</text>
+      </view>
+      <text class="time-separator">:</text>
+      <view class="time-item">
+        <text class="time-num">{{countdown.hours || '00'}}</text>
+        <text class="time-label">时</text>
+      </view>
+      <text class="time-separator">:</text>
+      <view class="time-item">
+        <text class="time-num">{{countdown.minutes || '00'}}</text>
+        <text class="time-label">分</text>
+      </view>
+      <text class="time-separator">:</text>
+      <view class="time-item">
+        <text class="time-num">{{countdown.seconds || '00'}}</text>
+        <text class="time-label">秒</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 活动规则 -->
+  <view class="rules-card">
+    <view class="card-title">活动规则</view>
+    <view class="time-line">
+      <text class="time-label">报名时间</text>
+      <text class="time-value">2024-12-20 00:00 ~ 2024-12-31 23:59</text>
+    </view>
+    <view class="time-line">
+      <text class="time-label">投票时间</text>
+      <text class="time-value">2024-12-20 00:00 ~ 2024-12-31 23:59</text>
+    </view>
+    <view class="time-line">
+      <text class="time-label">活动简介</text>
+      <text class="time-value">通过上传视频和项目简介，进行投票评选，选出优秀的移动互联网开发项目</text>
+    </view>
+  </view>
+
+  <!-- 作品展示列表 -->
+  <view class="works-section">
+    <view class="section-title">参赛作品</view>
+    <view class="works-list">
+      <view class="work-item" 
+        wx:for="{{contestantsList}}" 
+        wx:key="id"
+        bindtap="onTapWork" 
+        data-id="{{item._id}}"
+        data-index="{{index}}"
+      >
+        <view class="work-media">
+          <video 
+            wx:if="{{item.isPlaying}}"
+            class="work-video"
+            src="{{item.videoUrl}}"
+            object-fit="cover"
+            show-center-play-btn="{{false}}"
+            controls="{{false}}"
+            loop="{{true}}"
+            bindended="onVideoEnded"
+            data-index="{{index}}"
+            initial-time="0"
+            autoplay="{{true}}"
+            muted="{{true}}"
+          ></video>
+          <image 
+            wx:else
+            class="work-cover" 
+            src="{{item.coverUrl}}" 
+            mode="aspectFill"
+          />
+          <view class="vote-badge">
+            <text class="vote-count">{{item.voteCount || 0}}</text>
+            <text class="vote-unit">票</text>
+          </view>
+        </view>
+        <view class="work-info">
+          <text class="work-title">{{item.name}}</text>
+        </view>
+      </view>
+    </view>
+    
+    <!-- 加载状态提示 -->
+    <view class="loading-more">
+      <text wx:if="{{loading}}">加载中...</text>
+      <text wx:elif="{{!hasMore}}">没有更多了</text>
+      <text wx:else>上拉加载更多</text>
+    </view>
+  </view>
+</view>
+
+<!-- 底部导航栏 -->
+<view class="tab-bar">
+  <view class="tab-item {{currentTab === 0 ? 'active' : ''}}" bindtap="switchTab" data-tab="0">
+    <text class="iconfont icon-home"></text>
+    <text>首页</text>
+  </view>
+  <view class="tab-item {{currentTab === 1 ? 'active' : ''}}" bindtap="switchTab" data-tab="1">
+    <text class="iconfont icon-add"></text>
+    <text>报名</text>
+  </view>
+  <view class="tab-item {{currentTab === 2 ? 'active' : ''}}" bindtap="switchTab" data-tab="2">
+    <text class="iconfont icon-rank"></text>
+    <text>排行</text>
+  </view>
+  <view class="tab-item {{currentTab === 3 ? 'active' : ''}}" bindtap="switchTab" data-tab="3">
+    <text class="iconfont icon-info"></text>
+    <text>详情</text>
+  </view>
+</view>

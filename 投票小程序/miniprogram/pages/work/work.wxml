@@ -1,0 +1,54 @@
+<navigation-bar 
+  title="作品详情" 
+  back="{{true}}" 
+  color="white" 
+  background="transparent"
+  custom-style="background: linear-gradient(135deg, #6e8efb, #4a6feb);"
+></navigation-bar>
+
+<view class="work-container">
+  <!-- 视频展示 -->
+  <view class="video-wrapper {{videoRatio === '9:16' ? 'vertical' : 'horizontal'}}">
+    <video 
+      id="work-video"
+      class="work-video" 
+      src="{{contestant.videoUrl}}"
+      autoplay="{{false}}"
+      loop="{{false}}"
+      controls="{{true}}"
+      show-fullscreen-btn="{{true}}"
+      show-play-btn="{{true}}"
+      show-center-play-btn="{{true}}"
+      enable-progress-gesture="{{true}}"
+      object-fit="contain"
+      poster="{{contestant.coverUrl}}"
+      bindloadedmetadata="onVideoLoaded"
+      binderror="onVideoError"
+      bindplay="onVideoPlay"
+      bindpause="onVideoPause"
+      bindended="onVideoEnded"
+    ></video>
+  </view>
+
+  <!-- 票数显示 -->
+  <view class="vote-count">{{contestant.voteCount || 0}}票</view>
+
+  <!-- 团队信息 -->
+  <view class="info-item">
+    <text class="label">团队成员：</text>
+    <text class="value">{{contestant.members}}</text>
+  </view>
+
+  <!-- 项目介绍 -->
+  <view class="info-item">
+    <text class="label">项目介绍：</text>
+    <text class="value">{{contestant.description}}</text>
+  </view>
+
+  <!-- 投票按钮 -->
+  <view class="btn-wrapper">
+    <button class="vote-btn" bindtap="onVote" disabled="{{hasVoted}}">
+      {{hasVoted ? '已投票' : '投票'}}
+    </button>
+  </view>
+</view> 

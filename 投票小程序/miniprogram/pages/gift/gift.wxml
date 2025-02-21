@@ -1,0 +1,12 @@
+<navigation-bar title="礼物" back="{{false}}" color="white" background="transparent"></navigation-bar>
+
+<view class="gift-container">
+  <view class="gift-list">
+    <view class="gift-item" wx:for="{{giftList}}" wx:key="id">
+      <image class="gift-image" src="{{item.imageUrl}}" mode="aspectFit"></image>
+      <view class="gift-name">{{item.name}}</view>
+      <view class="gift-price">{{item.price}}积分</view>
+      <button class="send-btn" bindtap="sendGift" data-id="{{item.id}}">赠送</button>
+    </view>
+  </view>
+</view> 

@@ -1,0 +1,110 @@
+<navigation-bar title="活动报名" back="{{true}}" color="white" background="transparent"></navigation-bar>
+
+<view class="signup-container">
+  <!-- 添加顶部标题 -->
+  <view class="page-header">
+    <text class="title">活动报名</text>
+  </view>
+
+  <view class="form-area">
+    <!-- 项目名称 -->
+    <view class="form-item">
+      <text class="required">*</text>
+      <text class="label">项目名称</text>
+      <input 
+        class="input" 
+        placeholder="请输入项目名称" 
+        placeholder-style="color: rgba(255, 255, 255, 0.4)"
+        value="{{form.name}}"
+        bindinput="onInput"
+        data-field="name"
+        maxlength="30"
+      />
+    </view>
+
+    <!-- 团队成员 -->
+    <view class="form-item">
+      <text class="required">*</text>
+      <text class="label">团队成员</text>
+      <input 
+        class="input" 
+        placeholder="请输入团队成员姓名，多个成员用逗号分隔" 
+        placeholder-style="color: rgba(255, 255, 255, 0.4)"
+        value="{{form.members}}"
+        bindinput="onInput"
+        data-field="members"
+      />
+    </view>
+
+    <!-- 联系方式 -->
+    <view class="form-item">
+      <text class="required">*</text>
+      <text class="label">联系方式</text>
+      <input 
+        class="input" 
+        placeholder="请输入手机号" 
+        placeholder-style="color: rgba(255, 255, 255, 0.4)"
+        value="{{form.contact}}"
+        bindinput="onInput"
+        data-field="contact"
+        type="number"
+        maxlength="11"
+      />
+    </view>
+
+    <!-- 项目介绍 -->
+    <view class="form-item">
+      <text class="required">*</text>
+      <text class="label">项目介绍</text>
+      <textarea 
+        class="textarea" 
+        placeholder="请输入项目介绍" 
+        placeholder-style="color: rgba(255, 255, 255, 0.4)"
+        value="{{form.description}}"
+        bindinput="onInput"
+        data-field="description"
+        maxlength="500"
+      />
+    </view>
+
+    <!-- 封面上传 -->
+    <view class="form-item">
+      <text class="required">*</text>
+      <text class="label">项目封面</text>
+      <view class="upload-cover" bindtap="uploadCover">
+        <image 
+          wx:if="{{form.coverUrl}}" 
+          src="{{form.coverUrl}}" 
+          mode="aspectFill" 
+          class="cover-image"
+        />
+        <view wx:else class="upload-placeholder">
+          <text class="iconfont icon-add"></text>
+          <text class="tip">上传封面图片</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 展示视频 -->
+    <view class="form-item">
+      <text class="required">*</text>
+      <text class="label">展示视频</text>
+      <view class="video-uploader" bindtap="chooseVideo">
+        <video 
+          class="preview" 
+          src="{{form.videoUrl}}" 
+          wx:if="{{form.videoUrl}}"
+          object-fit="cover"
+        ></video>
+        <view class="upload-btn" wx:else>
+          <text class="iconfont icon-video"></text>
+          <text class="upload-text">点击上传视频</text>
+          <text class="upload-tip">建议时长1-3分钟</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 提交按钮 -->
+    <button class="submit-btn" bindtap="onSubmit">确认报名</button>
+  </view>
+</view> 

@@ -1,0 +1,13 @@
+<view class="login-container">
+  <image class="logo" src="/images/logo.jpg" mode="aspectFit"></image>
+  <view class="title">欢迎参加移动互联网开发大赛</view>
+  <view class="subtitle">请授权微信登录以继续使用</view>
+  <button 
+    class="login-btn" 
+    type="primary" 
+    open-type="getUserProfile" 
+    bindtap="getUserProfile"
+  >
+    微信登录
+  </button>
+</view> 

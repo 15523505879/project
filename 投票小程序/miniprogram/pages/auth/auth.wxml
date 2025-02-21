@@ -1,0 +1,11 @@
+<view class="auth-container">
+  <view class="auth-card">
+    <image class="logo" src="/images/logo.png" mode="aspectFit"/>
+    <view class="title">欢迎参加移动互联网开发大赛</view>
+    <view class="desc">请授权微信登录以继续使用</view>
+    <button 
+      class="auth-btn" 
+      bindtap="handleAuth"
+    >微信登录</button>
+  </view>
+</view> 

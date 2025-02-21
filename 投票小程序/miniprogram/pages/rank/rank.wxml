@@ -1,0 +1,48 @@
+<view class="page-container">
+  <view class="rank-header">
+    <view class="title">排行榜</view>
+  </view>
+  
+  <scroll-view 
+    class="rank-list"
+    scroll-y="true"
+    enable-flex="true"
+    enhanced="true"
+    show-scrollbar="true"
+    bounces="true"
+  >
+    <view class="rank-list-scroll">
+      <view class="rank-item" 
+        wx:for="{{rankList}}" 
+        wx:key="_id"
+        bindtap="onTapItem"
+        data-id="{{item._id}}"
+      >
+        <view class="rank-badge {{index < 3 ? 'top' + (index + 1) : ''}}">
+          <text class="rank-num">{{index + 1}}</text>
+        </view>
+        
+        <image 
+          class="work-cover" 
+          src="{{item.coverUrl}}" 
+          mode="aspectFill"
+        />
+        
+        <view class="info">
+          <view class="name">{{item.name}}</view>
+          <view class="members">{{item.members}}</view>
+          <view class="description">{{item.description}}</view>
+        </view>
+        
+        <view class="vote-info">
+          <text class="vote-count">{{item.voteCount || 0}}</text>
+          <text class="vote-unit">票</text>
+        </view>
+      </view>
+      
+      <view class="list-footer" wx:if="{{rankList.length > 0}}">
+        <text>没有更多了~</text>
+      </view>
+    </view>
+  </scroll-view>
+</view> 

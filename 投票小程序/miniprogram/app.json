@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    "pages/auth/auth",
+    "pages/signup/signup",
+    "pages/rank/rank",
+    "pages/detail/detail",
+    "pages/work/work"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationStyle": "custom",
+    "backgroundColor": "#000033"
+  },
+  "tabBar": {
+    "custom": true,
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/signup/signup",
+        "text": "报名"
+      },
+      {
+        "pagePath": "pages/rank/rank",
+        "text": "排行"
+      },
+      {
+        "pagePath": "pages/detail/detail",
+        "text": "详情"
+      }
+    ]
+  },
+  "style": "v2",
+  "useExtendedLib": {
+    "weui": true
+  },
+  "sitemapLocation": "sitemap.json"
+} 

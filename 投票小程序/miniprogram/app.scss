@@ -1,0 +1,51 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+@font-face {
+  font-family: "iconfont";
+  src: url('data:font/woff2;charset=utf-8;base64,d09GMgABAAAAAAO0AAsAAAAACFwAAANlAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHFQGYACDMgqDaIM0ATYCJAMUCwwABCAFhGcHWBtmBxHVm8PIfhzYMck6c2bkzKmGc3Of/P9P8/3/a+19zr3PvT8eomhWk3g0DZVEJUQyNEgFShKPUHSSmV7+42Xp0ywZJGE6GRqnA0dJLG0C5cVHG0Dlpe8F4IA4wGjncf+vTf0SkNnPs5zWXJoDjLcGNtakmBskYDwhvWHsJsrDuJ5Ao2kxYNtxSS1QK8C8QFwxKQPqRVGpkoY6qAtWFuIO1NTT6+Ed4Lb/+/EPeKhJqswvPL7cDqHwl/dnZYn+j0BaBgI/nxt2ERlbgEK8qLS4ggz5LWRo9FdhdwC16iTxS/uz8mflf0xW1v8/kVBFtf7wSJJFBAWwchfYT5L4pSIVv2yk5neWGqJ+p6gF+N0Qhxc8QjcFYVtEHLz6VpJcdF0n6U1SvafP5uS8upM3z+e9eFnw/GXh02crnzxf9PwF/1adHBtNvGDgzp1bLR88vN0y7c7tW3fvtEp78PCdlg/u3G6JnhYz0oJ79wM7Rz2+G/DwQeDd+wH37gc+uBv48G7Qo3uBj+4HPbwf9Ph+8JMHwU8fhDx7EPrsYcizh6FPH4Q+eRD6+EHY4wdhTx6GP3kY/vRh+LOHEbfuBt69G3jvXtD9+8EP7gc/vB/86H7w4/vBT+4HP30Q8uxh6POH4S8eRbx8FPHqUeSrx1GvH0e9eRL95mnMm6cxb5/FvnsW++553Pvn8e9fJHx4kfDxZeLHl4mfXiZ+fpX05VXS19fJ394kf3+T8uNt6s93aT/fpf16n/77ffrfD+n/PmYwvz9mF3z5+/fvzNw/f2e/+/37d9bXf/9m5fz+/S+RKdvWmzAB/E/l5ORkx+Tk5iTD63/zf+D/e3FxFvyPF8Gv/7kFUPHpX4xeoj5L2vWvtgYA/7+U62J0Fe2csLKypbKlCg5VtCpF3QpEXapxKjk1LqEhwxkk9WbI1FtFFnYLVZrsoaq3GxptSu/cZAwXIqMBm7YBhHaXkLR6hky7O2Rhn6Gi2zdUtceERsfRc8EmM+GiKCQFjTBPYGpGR6uWIjhpBfV7pBK3XUo0kU+Q7yIv44yYBDaYR+yQc0xRUYSYYIpYhX6/DEmShGhZr4oF+n0yBNNMiApRkCTQEJgnwKQx9NBVk0Lg87cC6fdQkXDz+qk0Ip6C+NwQ6zTOECYCVjC8pd2Uo+hzKVFIBGEERhGWQj8/GSSiRALRJL28KhigewcZBEZjhHQiUa2K8fX6NW+AG+ARZZQoR0QlGtGJQQyiE4HYJCbJxjByR6YCk0oqrtBR6/cjlQAAAAA=') format('woff2');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-home:before {
+  content: "\e6b8";
+}
+
+.icon-add:before {
+  content: "\e767";
+}
+
+.icon-rank:before {
+  content: "\e6df";
+}
+
+.icon-info:before {
+  content: "\e7dc";
+}
+
+.icon-gift:before {
+  content: "\e6c4";
+}
+
+.icon-camera:before {
+  content: "\e872";
+}
+
+.icon-back:before {
+  content: "\e697";
+}

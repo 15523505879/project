@@ -1,0 +1,76 @@
+<view class="page-container">
+  <view class="detail-header">
+    <view class="title">活动详情</view>
+  </view>
+  
+  <view class="detail-content">
+    <view class="section">
+      <view class="section-title">活动介绍</view>
+      <view class="content">
+        <view>移动互联网开发大赛是一个面向全校学生的创新创业比赛平台，旨在培养学生的创新能力和实践技能。</view>
+      </view>
+    </view>
+    
+    <view class="section">
+      <view class="section-title">投票规则</view>
+      <view class="content">
+        <view class="rule-list">
+          <view class="rule-item">
+            <text class="dot">•</text>
+            <text class="rule-text">每个用户对每个作品只能投一票</text>
+          </view>
+          <view class="rule-item">
+            <text class="dot">•</text>
+            <text class="rule-text">每位用户每天只能投一次票</text>
+          </view>
+          <view class="rule-item">
+            <text class="dot">•</text>
+            <text class="rule-text">投票结束后以最终排名为准</text>
+          </view>
+          <view class="rule-item">
+            <text class="dot">•</text>
+            <text class="rule-text warning">禁止使用任何刷票行为，一经发现将取消参赛资格</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    
+    <view class="section">
+      <view class="section-title">比赛时间</view>
+      <view class="content">
+        <view class="time-item">
+          <text class="label">报名时间：</text>
+          <text class="value">2024.12.20 - 2024.12.31</text>
+        </view>
+        <view class="time-item">
+          <text class="label">投票时间：</text>
+          <text class="value">2024.12.20 - 2024.12.31</text>
+        </view>
+        <view class="time-item">
+          <text class="label">评审时间：</text>
+          <text class="value">2024.12.31 - 2025.1.12</text>
+        </view>
+      </view>
+    </view>
+    
+    <view class="section">
+      <view class="section-title">奖项设置</view>
+      <view class="content">
+        <view class="prize-item">一等奖（1名）</view>
+        <view class="prize-item">二等奖（2名）</view>
+        <view class="prize-item">三等奖（3名）</view>
+        <view class="prize-item">优秀奖（5名）</view>
+      </view>
+    </view>
+    
+    <view class="section">
+      <view class="section-title">参赛要求</view>
+      <view class="content">
+        <view class="prize-item">参赛作品必须为原创</view>
+        <view class="prize-item">每个团队人数不超过4人</view>
+        <view class="prize-item">作品必须是移动互联网相关的应用或解决方案</view>
+        <view class="prize-item">提交作品需包含完整的文档和演示视频</view>
+      </view>
+    </view>
+  </view>
+</view> 
