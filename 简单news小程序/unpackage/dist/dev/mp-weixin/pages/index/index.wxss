@@ -1,0 +1,22 @@
+
+.uni-media-list {
+  display: flex;
+  align-items: center;
+}
+.uni-media-list-logo {
+  width: 50px; /* 设置一个固定的宽度 */
+  height: 50px; /* 设置一个固定的高度 */
+  margin-right: 10px; /* 添加一些右边距 */
+}
+.uni-media-list-body {
+  flex: 1;
+}
+.uni-media-list-text-top {
+  font-size: 16px;
+  font-weight: bold;
+}
+.uni-media-list-text-bottom {
+  font-size: 12px;
+  color: #999;
+}
+
